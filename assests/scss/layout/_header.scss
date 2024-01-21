@@ -1,0 +1,177 @@
+@import '../common/base';
+@import '../common/fonts';
+@import '../common/mixin';
+
+header{
+    background: $secondary-color;
+    padding: 10px 0;
+
+    @include device-lg{
+        background: transparent;
+        position: absolute;
+        width: 100%;
+    }
+
+    .container{
+        @include container;
+
+        .header-section{
+            @include d-flex;
+            @include align-center;
+            @include justify-between;
+            padding: 0 30px;
+            .logo{
+                picture{
+                    display: block;
+                    max-width: 150px;
+
+                    img{
+                        width: 100%;
+                        height: auto;
+                        object-fit: cover;
+                    }
+                }
+            }
+
+            .navbar{
+                display: none;
+
+                @include device-lg{
+                    display: inline-block;
+
+                    nav{
+                        ul{
+                            @include d-flex;
+                            @include justify-between;
+                            @include align-center;
+                            @include f-d-row;
+
+                            li{
+                                a{
+                                    @include text-decoration-none;
+                                    padding: 0 15px;
+                                    color: $primary-color;
+                                    @include font-detail(20px, 500);
+
+                                    &:hover{
+                                        color: $secondary-color;
+                                        text-decoration: underline;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .nav-icons{
+                a{
+                    @include text-decoration-none;
+                    display: inline-block;
+                    span{
+                        display: inline-block;
+                        font-size: 15px;
+                        color: $primary-color;
+                        cursor: pointer;
+                        padding: 6px 5px;
+
+                        &.icon-search{
+                            @include icon-search;
+                        }
+
+                        &.icon-cart{
+                            @include icon-cart;
+                        }
+
+                        &.icon-menu{
+                            @include icon-menu;
+                        }
+
+                        &:hover{
+                            color: $secondary-color;
+                        }
+                    }            
+                }
+            }
+        }
+
+    }
+}
+
+.hero_section{
+    background: url(../../../public/images/banner_image.jpg) no-repeat center;
+    background-size: cover;
+    @include text-center;
+    padding: 100px 30px;
+
+        .container{
+            @include container;
+            
+            h1{
+                @include h1;
+                margin: 20px 0 0 0;
+                
+                @include device-sm{
+                    margin: 25px 0 0 0;
+                }
+                
+                @include device-md{
+                    margin: 28px 0 0 0;
+                }
+                
+                @include device-lg{
+                    margin: 30px 0 0 0;
+                }
+            }
+            
+            
+            p{
+                @include p;
+                margin: 30px 0 0 0;
+                display: -webkit-box;
+                -webkit-line-clamp: 6;
+                -webkit-box-orient: vertical;  
+                overflow: hidden;
+                
+                @include device-sm{
+                    margin: 35px 0 0 0;
+                }
+                
+                @include device-md{
+                    margin: 38px 0 0 0;
+                }
+                
+                @include device-lg{
+                    margin: 40px 0 0 0;
+                }
+            }
+            
+            .hero_buttons{
+                margin: 20px 0 0 0;
+                
+                @include device-sm{
+                    margin: 25px 0 0 0;
+                }
+                
+                @include device-md{
+                    margin: 28px 0 0 0;
+                }
+                
+                @include device-lg{
+                    margin: 80px 0 0 0;
+                }
+                
+                .btn{
+                    @include btn;
+                    width: 50%;
+                }
+                
+                .btn-secondary{
+                    @include btn;
+                    @include btn-secondary;
+                    width: 50%;
+                }
+            }
+        }
+    
+}
